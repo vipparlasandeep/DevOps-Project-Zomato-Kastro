@@ -58,8 +58,8 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
-                        sh "docker tag zomato kastrov/zomato:latest "
-                        sh "docker push kastrov/zomato:latest "
+                        sh "docker tag zomato 444sandeep/zomato:latest "
+                        sh "docker push 444sandeep/zomato:latest "
                     }
                 }
             }
@@ -68,9 +68,9 @@ pipeline {
             steps {
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
-                       sh 'docker-scout quickview kastrov/zomato:latest'
-                       sh 'docker-scout cves kastrov/zomato:latest'
-                       sh 'docker-scout recommendations kastrov/zomato:latest'
+                       sh 'docker-scout quickview 444sandeep/zomato:latest'
+                       sh 'docker-scout cves 444sandeep/zomato:latest'
+                       sh 'docker-scout recommendations 444sandeep/zomato:latest'
                    }
                 }
             }
